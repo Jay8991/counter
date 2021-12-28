@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  // init will be 0 
+  const [clicked, setclicked] = useState(0);
+  // increment by 1
+  function didclicked(){
+    setclicked(clicked+1)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={didclicked}>click me</button>
+      <p>
+        counter : {clicked}
+      </p>
     </div>
   );
 }
